@@ -2,11 +2,12 @@ import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
 import db from "./utils/db.js";
+import cookieParser from 'cookie-parser'
 // import user router
 import userRoute from "./routes/User.routes.js"
 dotenv.config();
 const app = express();
-
+app.use(cookieParser()) ; 
 // * cors is required for cross origin resource sharing need to  learn
 app.use(
   cors({
